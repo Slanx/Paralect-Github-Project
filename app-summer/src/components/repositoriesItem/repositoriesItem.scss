@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+
+.repository {
+  background: $color-white;
+  padding: 24px 32px;
+  width: 877px;
+  height: 112px;
+
+  &__link {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: $color-blue;
+    margin: 0 0 16px 0;
+  }
+
+  &__descr {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}

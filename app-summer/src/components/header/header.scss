@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.header {
+  background-color: $color-blue;
+  padding: 16px;
+  &__container {
+    display: flex;
+    gap: 22px;
+  }
+}

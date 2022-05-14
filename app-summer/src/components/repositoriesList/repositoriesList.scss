@@ -1,0 +1,19 @@
+.repositories {
+  padding: 28px 0 28px 0;
+  &__amount {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 130%;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 29px 0 24px 0;
+  }
+  &__pagination {
+    display: flex;
+    justify-content: end;
+    margin: 0 13px 0 0;
+  }
+}

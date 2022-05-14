@@ -1,0 +1,38 @@
+@import '../../styles/variables.scss';
+
+.user {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0 0 15px;
+  gap: 28px;
+  width: 280px;
+  height: 280px;
+  &__photo {
+    img {
+      border-radius: 50%;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 130%;
+  }
+  &__link {
+    display: inline-block;
+    color: $color-blue;
+    margin: 12px 0 25px 0;
+  }
+  &__follow {
+    display: flex;
+    gap: 16px;
+  }
+}
+
+.item-follow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 16px;
+  line-height: 150%;
+}

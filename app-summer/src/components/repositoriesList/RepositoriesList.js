@@ -1,6 +1,6 @@
 import RepositoriesItem from '../repositoriesItem/RepositoriesItem';
 import './repositoriesList.scss';
-import Pagination from '../pagination/pagination';
+import Pagination from '../pagination/Pagination';
 
 const RepositoriesList = () => {
   return (

@@ -3,7 +3,7 @@ import './header.scss';
 
 import SearchPanel from '../searchPanel/SearchPanel';
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header className="header">
       <div className="header__container">
@@ -11,7 +11,7 @@ const Header = () => {
           <Logo className="logo-github" />
         </div>
         <div className="header__search">
-          <SearchPanel />
+          <SearchPanel onUserSelected={props.onUserSelected} />
         </div>
       </div>
     </header>

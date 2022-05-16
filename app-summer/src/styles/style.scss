@@ -15,7 +15,7 @@ body {
 }
 
 .app {
-  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,8 @@ body {
 }
 
 [class*='__container'] {
-  max-width: 1269px;
+  max-width: 1299px;
+  padding: 0 15px;
   width: 100%;
   margin: 0 auto;
 }

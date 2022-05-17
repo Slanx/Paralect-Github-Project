@@ -18,13 +18,13 @@ const useGitHubService = () => {
       followers: user.followers,
       following: user.following,
       avatar: user.avatar_url,
+      repos: user.public_repos,
     };
   };
 
   const getUserRepositories = async (userName, page = 1) => {
     const res = await request(`${_apiBase}${userName}/repos?per_page=4&page=${page}`);
-    console.log(res);
-    console.log(res.map(_transoformRepoInfo));
+    return res.map(_transoformRepoInfo);
   };
 
   const _transoformRepoInfo = (repo) => {
@@ -34,7 +34,7 @@ const useGitHubService = () => {
       descr: repo.description,
     };
   };
-  return { getUser, getUserRepositories, loading, error };
+  return { getUser, getUserRepositories, loading, error, clearError };
 };
 
 export default useGitHubService;

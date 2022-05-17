@@ -1,12 +1,14 @@
 import './repositoriesItem.scss';
 
-const RepositoriesItem = () => {
+const RepositoriesItem = (props) => {
+  const { name, url, descr } = props.repository;
+
   return (
     <div className="repository">
-      <a href="#" className="repository__link">
-        react-hot-loader
+      <a href={url} className="repository__link">
+        {name}
       </a>
-      <div className="repository__descr">Tweak React components in real time. (Deprecated: use Fast Refresh instead)</div>
+      <div className="repository__descr">{descr}</div>
     </div>
   );
 };

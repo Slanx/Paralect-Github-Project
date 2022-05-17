@@ -1,35 +1,9 @@
-import { useEffect, useState } from 'react';
-import useGitHubService from '../../services/GitHubService';
-
-import UserPhoto from '../../resources/user.png';
 import { ReactComponent as Followers } from '../../resources/icon/group.svg';
 import { ReactComponent as Following } from '../../resources/icon/person.svg';
 import './userInfo.scss';
 
 const UserInfo = (props) => {
-  const [user, setUser] = useState('Slanx');
-
-  const { loading, error, getUser, clearError, getUserRepositories } = useGitHubService();
-
-  useEffect(() => {
-    updateUser();
-  }, [props.userName]);
-
-  const updateUser = () => {
-    const { userName } = props;
-
-    if (!userName) {
-      return;
-    }
-    getUser(userName).then(onUserLoaded);
-    getUserRepositories(userName);
-  };
-
-  const onUserLoaded = (user) => {
-    setUser(user);
-  };
-
-  const { name, nickName, url, followers, following, avatar } = user;
+  const { name, nickName, url, followers, following, avatar } = props.user;
 
   return (
     <div className="user">
@@ -47,7 +21,7 @@ const UserInfo = (props) => {
               <Followers />
             </div>
             <div className="item-follow__descr">
-              <span className="item-follow__amount">{followers}</span> followers
+              <span className="item-follow__amount">{followers < 1000 ? followers : `${(followers / 1000) * 1}k`}</span> followers
             </div>
           </div>
           <div className="user__following item-follow">

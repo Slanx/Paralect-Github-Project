@@ -1,4 +1,5 @@
-import { Reactcomponent as Search } from '../../resources/icon/search-start.svg';
+import { ReactComponent as Search } from '../../resources/icon/search-start.svg';
+import './initialPage.scss';
 
 const InitialPage = () => {
   return (

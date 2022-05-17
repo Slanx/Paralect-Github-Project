@@ -32,6 +32,7 @@ body {
 .main {
   flex: 1 1 auto;
   background: $color-grey-light;
+  display: flex;
   &__container {
     display: flex;
     gap: 85px;

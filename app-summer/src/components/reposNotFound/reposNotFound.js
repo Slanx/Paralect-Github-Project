@@ -3,11 +3,11 @@ import './reposNotFound.scss';
 
 const ReposNotFound = () => {
   return (
-    <div className="empty">
-      <div className="empty__picture">
+    <div className="found">
+      <div className="found__picture">
         <NotFound />
       </div>
-      <div className="empty__descr">Repository list is empty</div>
+      <div className="found__descr">Repository list is empty</div>
     </div>
   );
 };

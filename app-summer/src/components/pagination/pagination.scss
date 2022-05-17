@@ -7,6 +7,8 @@
   line-height: 21px;
   gap: 16px;
   padding: 2px 0;
+  user-select: none;
+  cursor: pointer;
 
   &__pages {
     display: flex;
@@ -15,12 +17,21 @@
   &__button {
     color: $color-grey;
     background: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     &.active {
       background: $color-blue;
       border-radius: 3px;
       color: $color-white;
       padding: 0 6px;
     }
+  }
+  &__break {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__arrow {

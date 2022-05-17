@@ -35,10 +35,10 @@ const App = () => {
     setUser(user);
   };
 
-  const loader = loading && !error && !user ? <Loader /> : null;
-  const errorMassage = !user && error && !loading ? <UserNotFound /> : null;
-  const userInfo = user && !error && !loading ? <UserInfo user={user} /> : null;
-  const repositoriesList = user && !error && !loading ? <RepositoriesList userName={selectedUser} reposAmount={user.repos} /> : null;
+  const loader = loading ? <Loader /> : null;
+  const errorMassage = error ? <UserNotFound /> : null;
+  const userInfo = !(loading || error || !user) ? <UserInfo user={user} /> : null;
+  const repositoriesList = !(loading || error || !user) ? <RepositoriesList userName={selectedUser} reposAmount={user.repos} /> : null;
   const initialPage = !selectedUser && !user && !error && !loading ? <InitialPage /> : null;
 
   return (

@@ -5,7 +5,7 @@ const RepositoriesItem = (props) => {
 
   return (
     <div className="repository">
-      <a href={url} className="repository__link">
+      <a href={url} target="_blank" rel="noreferrer" className="repository__link">
         {name}
       </a>
       <div className="repository__descr">{descr}</div>

@@ -12,7 +12,7 @@ const UserInfo = (props) => {
       </div>
       <div className="user__descr">
         <h3 className="user__title">{name}</h3>
-        <a href={url} className="user__link">
+        <a href={url} target="_blank" rel="noreferrer" className="user__link">
           {nickName}
         </a>
         <div className="user__follow">
@@ -21,7 +21,8 @@ const UserInfo = (props) => {
               <Followers />
             </div>
             <div className="item-follow__descr">
-              <span className="item-follow__amount">{followers < 1000 ? followers : `${(followers / 1000) * 1}k`}</span> followers
+              <span className="item-follow__amount">{followers < 1000 ? followers : `${(followers / 1000) * 1}k`}</span>{' '}
+              followers
             </div>
           </div>
           <div className="user__following item-follow">

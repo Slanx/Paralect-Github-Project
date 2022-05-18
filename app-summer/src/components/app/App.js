@@ -5,8 +5,8 @@ import Header from '../header/Header';
 import RepositoriesList from '../repositoriesList/RepositoriesList';
 import UserInfo from '../userInfo/UserInfo';
 import InitialPage from '../initialPage/InitialPage';
-import UserNotFound from '../userNotFound/UserNotFound';
-import ReposNotFound from '../reposNotFound/ReposNotFound';
+import UserNotFound from '../userNotFound/userNotFound';
+import ReposNotFound from '../reposNotFound/reposNotFound';
 import { Loader } from '../loader/Loader';
 
 const App = () => {

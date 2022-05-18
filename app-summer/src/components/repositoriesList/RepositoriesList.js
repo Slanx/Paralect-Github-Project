@@ -3,7 +3,7 @@ import useGitHubService from '../../services/GitHubService';
 
 import RepositoriesItem from '../repositoriesItem/RepositoriesItem';
 import './repositoriesList.scss';
-import Pagination from '../pagination/Pagination';
+import Paginate from '../paginate/Paginate';
 import { Loader } from '../loader/Loader';
 
 const RepositoriesList = (props) => {
@@ -51,7 +51,7 @@ const RepositoriesList = (props) => {
         {loader}
       </div>
       <div className="repositories__pagination">
-        <Pagination pages={reposAmount} updatePage={updatePage} />
+        <Paginate pages={reposAmount} updatePage={updatePage} />
       </div>
     </div>
   );

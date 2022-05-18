@@ -21,7 +21,9 @@ const UserInfo = (props) => {
               <Followers />
             </div>
             <div className="item-follow__descr">
-              <span className="item-follow__amount">{followers < 1000 ? followers : `${(followers / 1000) * 1}k`}</span>{' '}
+              <span className="item-follow__amount">
+                {followers < 1000 ? followers : `${(followers / 1000).toFixed(1)}k`}
+              </span>{' '}
               followers
             </div>
           </div>
@@ -30,7 +32,10 @@ const UserInfo = (props) => {
               <Following />
             </div>
             <div className="item-follow__descr">
-              <span className="item-follow__amount">{following}</span> following
+              <span className="item-follow__amount">
+                {following < 1000 ? following : `${(following / 1000).toFixed(1)}k`}
+              </span>{' '}
+              following
             </div>
           </div>
         </div>

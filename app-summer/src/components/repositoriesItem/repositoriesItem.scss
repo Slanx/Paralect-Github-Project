@@ -13,10 +13,17 @@
     line-height: 29px;
     color: $color-blue;
     margin: 0 0 16px 0;
+    @media (max-width: 500px) {
+      font-size: 16px;
+    }
   }
 
   &__descr {
     font-size: 16px;
     line-height: 19px;
+    @media (max-width: 500px) {
+      line-height: 14px;
+      font-size: 12px;
+    }
   }
 }

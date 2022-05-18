@@ -5,7 +5,6 @@
 * {
   font-family: 'Inter', 'Times New Roman', sans-serif;
   font-size: 14px;
-  font-weight: 400;
 }
 body {
   color: $color-black;
@@ -36,5 +35,15 @@ body {
   &__container {
     display: flex;
     gap: 85px;
+    @media (max-width: 878px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: start;
+      gap: 40px;
+      @media (max-width: 500px) {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
   }
 }

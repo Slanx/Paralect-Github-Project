@@ -6,16 +6,26 @@
     font-weight: 600;
     font-size: 32px;
     line-height: 130%;
+    @media (max-width: 500px) {
+      font-size: 24px;
+      text-align: center;
+    }
   }
   &__list {
     display: flex;
     flex-direction: column;
     gap: 24px;
     margin: 29px 0 24px 0;
+    // height: 520px;
+    // max-height: 520px;
   }
   &__pagination {
     display: flex;
     justify-content: end;
     margin: 0 13px 0 0;
+    @media (max-width: 500px) {
+      justify-content: center;
+      margin: 0;
+    }
   }
 }

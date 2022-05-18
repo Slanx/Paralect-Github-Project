@@ -5,7 +5,8 @@ import Header from '../header/Header';
 import RepositoriesList from '../repositoriesList/RepositoriesList';
 import UserInfo from '../userInfo/UserInfo';
 import InitialPage from '../initialPage/InitialPage';
-import UserNotFound from '../userNotFound/userNotFound';
+import UserNotFound from '../userNotFound/UserNotFound';
+import ReposNotFound from '../reposNotFound/ReposNotFound';
 import { Loader } from '../loader/Loader';
 
 const App = () => {
@@ -38,7 +39,13 @@ const App = () => {
   const loader = loading ? <Loader /> : null;
   const errorMassage = error ? <UserNotFound /> : null;
   const userInfo = !(loading || error || !user) ? <UserInfo user={user} /> : null;
-  const repositoriesList = !(loading || error || !user) ? <RepositoriesList userName={selectedUser} reposAmount={user.repos} /> : null;
+  const repositoriesList = !(loading || error || !user) ? (
+    user.repos !== 0 ? (
+      <RepositoriesList userName={selectedUser} reposAmount={user.repos} />
+    ) : (
+      <ReposNotFound />
+    )
+  ) : null;
   const initialPage = !selectedUser && !user && !error && !loading ? <InitialPage /> : null;
 
   return (

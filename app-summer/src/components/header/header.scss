@@ -2,9 +2,12 @@
 
 .header {
   background-color: $color-blue;
-  padding: 16px;
+  padding: 16px 0;
   &__container {
     display: flex;
     gap: 22px;
+  }
+  &__search {
+    flex: 0 1 500px;
   }
 }

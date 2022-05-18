@@ -1,10 +1,16 @@
 import { ReactComponent as Icon } from '../../resources/icon/search.svg';
 import './searchPanel.scss';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const SearchPanel = (props) => {
   const [userName, setUserName] = useState(null);
+
+  const textField = useRef(null);
+
+  const onInputFocus = () => {
+    textField.current.focus();
+  };
 
   const userSelect = (e) => {
     if (e.key === 'Enter') {
@@ -13,9 +19,15 @@ const SearchPanel = (props) => {
   };
 
   return (
-    <div className="search">
+    <div className="search" onClick={onInputFocus}>
       <Icon className="search__icon"></Icon>
-      <input type="text" className="search__field" onKeyDown={userSelect} onChange={(e) => setUserName(e.target.value)} />
+      <input
+        ref={textField}
+        type="text"
+        className="search__field"
+        onKeyDown={userSelect}
+        onChange={(e) => setUserName(e.target.value)}
+      />
     </div>
   );
 };

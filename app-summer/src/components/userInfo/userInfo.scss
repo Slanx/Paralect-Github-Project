@@ -9,9 +9,15 @@
   &__photo {
     img {
       width: 280px;
-      height: 280px;
       border-radius: 50%;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      @media (max-width: 878px) {
+        width: 100%;
+        max-width: 280px;
+      }
+      @media (max-width: 500px) {
+        // width: 280/500 * 100%;
+      }
     }
   }
   &__title {
@@ -27,6 +33,17 @@
   &__follow {
     display: flex;
     gap: 16px;
+    @media (max-width: 878px) {
+      justify-content: center;
+    }
+  }
+  @media (max-width: 878px) {
+    flex: 0 0 80%;
+    margin: 20px 0 0 0px;
+    text-align: center;
+    @media (max-width: 500px) {
+      flex: 0 0 100%;
+    }
   }
 }
 

@@ -29,9 +29,13 @@ const useGitHubService = () => {
 
   const _transoformRepoInfo = (repo) => {
     return {
-      name: repo.name,
+      name: repo.name.lenth < 24 ? `${repo.name.slice(0, 24)}...` : repo.name,
       url: repo.html_url,
-      descr: repo.description,
+      descr: repo.description
+        ? repo.description.length < 70
+          ? repo.description
+          : `${repo.description.slice(0, 70)}...`
+        : 'There is no description for repository',
     };
   };
   return { getUser, getUserRepositories, loading, error, clearError };

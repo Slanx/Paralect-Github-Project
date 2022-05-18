@@ -5,7 +5,6 @@ import RepositoriesItem from '../repositoriesItem/RepositoriesItem';
 import './repositoriesList.scss';
 import Pagination from '../pagination/Pagination';
 import { Loader } from '../loader/Loader';
-import ReposNotFound from '../reposNotFound/ReposNotFound';
 
 const RepositoriesList = (props) => {
   const [repos, setRepos] = useState(null);
@@ -35,37 +34,26 @@ const RepositoriesList = (props) => {
     setPage(pageCurrent);
   };
 
-  const loader = loading ? <Loader /> : null;
-  const repositories = !(loading || !repos) ? (
-    <View repos={repos} reposAmount={reposAmount} updatePage={updatePage} />
-  ) : null;
-  const emptyMassage = reposAmount === 0 ? <ReposNotFound /> : null;
-
-  return (
-    <div className="repositories">
-      {loader}
-      {repositories}
-      {emptyMassage}
-    </div>
-  );
-};
-
-const View = ({ repos, reposAmount, updatePage }) => {
   const addRepositories = (repos) => {
     return repos.map((repo, id) => {
       return <RepositoriesItem repository={repo} key={id} />;
     });
   };
 
-  const repositories = addRepositories(repos);
+  const loader = loading ? <Loader /> : null;
+  const repositories = !(loading || !repos) ? addRepositories(repos) : null;
+
   return (
-    <>
+    <div className="repositories">
       <h2 className="repositories__amount">Repositories ({reposAmount})</h2>
-      <div className="repositories__list">{repositories}</div>
+      <div className="repositories__list">
+        {repositories}
+        {loader}
+      </div>
       <div className="repositories__pagination">
         <Pagination pages={reposAmount} updatePage={updatePage} />
       </div>
-    </>
+    </div>
   );
 };
 export default RepositoriesList;

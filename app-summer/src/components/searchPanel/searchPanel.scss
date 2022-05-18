@@ -6,7 +6,9 @@
   align-items: center;
   gap: 6px;
   position: relative;
-  width: 500px;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
 
   &__icon {
     display: flex;
@@ -16,6 +18,6 @@
   &__field {
     letter-spacing: 0.01em;
     line-height: 17px;
-    width: 90%;
+    width: 95%;
   }
 }

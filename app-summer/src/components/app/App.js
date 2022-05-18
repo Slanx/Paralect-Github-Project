@@ -21,6 +21,7 @@ const App = () => {
 
   useEffect(() => {
     updateUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedUser]);
 
   const updateUser = () => {

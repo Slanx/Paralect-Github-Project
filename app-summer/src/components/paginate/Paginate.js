@@ -1,5 +1,5 @@
 import { ReactComponent as Arrow } from '../../resources/icon/arrow.svg';
-import './pagination.scss';
+import './paginate.scss';
 
 import ReactPaginate from 'react-paginate';
 

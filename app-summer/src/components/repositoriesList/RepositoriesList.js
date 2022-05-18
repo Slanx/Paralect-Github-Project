@@ -24,6 +24,7 @@ const RepositoriesList = (props) => {
     };
 
     updateRepos();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userName, page]);
 
   const onUserLoaded = (repos) => {

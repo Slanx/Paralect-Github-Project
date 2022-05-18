@@ -21,7 +21,7 @@
   }
   &__pagination {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin: 0 13px 0 0;
     @media (max-width: 500px) {
       justify-content: center;

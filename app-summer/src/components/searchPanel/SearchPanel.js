@@ -22,6 +22,7 @@ const SearchPanel = (props) => {
     <div className="search" onClick={onInputFocus}>
       <Icon className="search__icon"></Icon>
       <input
+        tabIndex={1}
         ref={textField}
         type="text"
         className="search__field"

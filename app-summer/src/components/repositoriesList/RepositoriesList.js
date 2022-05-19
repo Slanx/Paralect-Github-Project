@@ -52,7 +52,7 @@ const RepositoriesList = (props) => {
         {loader}
       </div>
       <div className="repositories__pagination">
-        <Paginate pages={reposAmount} updatePage={updatePage} />
+        <Paginate reposAmount={reposAmount} updatePage={updatePage} />
       </div>
     </div>
   );

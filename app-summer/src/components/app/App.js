@@ -33,7 +33,6 @@ const App = () => {
   };
 
   const onUserLoaded = (user) => {
-    console.log(user);
     setUser(user);
   };
 

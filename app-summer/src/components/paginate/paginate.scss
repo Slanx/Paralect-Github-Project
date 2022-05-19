@@ -1,10 +1,27 @@
 @import '../../styles/variables.scss';
 
 .pagination {
-  color: $color-grey;
   display: flex;
+  gap: 16px;
+  color: $color-grey;
   font-size: 14px;
   line-height: 21px;
+  &__amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 500px) {
+      flex: 38px;
+    }
+  }
+  @media (max-width: 500px) {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+.pages {
+  display: flex;
   gap: 16px;
   padding: 2px 0;
   user-select: none;
